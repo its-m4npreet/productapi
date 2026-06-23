@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id        String   @id @default(cuid()) @db.Text
+  name      String   @db.Text
+  category  String   @db.Text
+  price     Decimal  @db.Decimal(10, 2)
+  createdAt DateTime @map("created_at") @default(now())
+  updatedAt DateTime @map("updated_at") @updatedAt
+
+  @@index([updatedAt, id])
+  @@index([category, updatedAt, id])
+  @@map("products")
+}
