@@ -257,6 +257,25 @@ SELECT COUNT(*) FROM products;
 
 ## API Documentation
 
+### `GET /`
+
+Returns basic API information and available endpoints.
+
+**Response:**
+```json
+{
+  "message": "Product API",
+  "version": "1.0.0",
+  "endpoints": {
+    "health": "/api/health",
+    "categories": "/api/categories",
+    "products": "/api/products"
+  }
+}
+```
+
+---
+
 ### `GET /api/health`
 
 Returns server and database health status.
@@ -384,6 +403,14 @@ Use Postman to manually test all API endpoints. Follow the steps below.
 1. Open **Postman**.
 2. Create a new **Collection** (e.g., "Product API").
 3. Add the base URL variable: set `{{baseUrl}}` = `http://localhost:3000`.
+
+---
+
+### 0. Home route
+
+**Request:** `GET {{baseUrl}}/`
+
+**Verify:** Status `200`, returns API name, version, and list of available endpoints.
 
 ---
 

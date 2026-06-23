@@ -28,6 +28,18 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+app.get('/', (_req, res) => {
+  res.json({
+    message: 'Product API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      categories: '/api/categories',
+      products: '/api/products',
+    },
+  });
+});
+
 app.use('/api/health', healthRouter);
 app.use('/api/categories', categoryRouter);
 app.use('/api/products', productRouter);
