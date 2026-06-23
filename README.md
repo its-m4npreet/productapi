@@ -189,7 +189,7 @@ RATE_LIMIT_MAX=100
 ### Prerequisites
 
 - Node.js 18+
-- PostgreSQL 14+ (or a cloud provider like Neon / Supabase)
+- PostgreSQL 14+ (or a cloud provider like Neon)
 - npm
 
 ### Commands
@@ -523,10 +523,9 @@ Replace `<deepCursor>` with a cursor from a page far into the dataset.
    npm run seed
    ```
 
-### Database — Neon or Supabase
+### Database — Neon
 
-- **Neon:** [neon.tech](https://neon.tech) — free tier, connection pooling, branching.
-- **Supabase:** [supabase.com](https://supabase.com) — free tier, includes PostgreSQL.
+- **Neon:** [neon.tech](https://neon.tech) — free tier, connection pooling, branching, IPv4/IPv6 support.
 
 Copy the connection string from your provider's dashboard into the `DATABASE_URL` environment variable.
 

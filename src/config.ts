@@ -9,10 +9,5 @@ export const config = {
     windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || '60000', 10),
     max: parseInt(process.env.RATE_LIMIT_MAX || '100', 10),
   },
-  supabase: {
-    url: process.env.SUPABASE_URL || '',
-    publishableKey: process.env.SUPABASE_PUBLISHABLE_KEY || '',
-    secretKey: process.env.SUPABASE_SECRET_KEY || '',
-    jwksUrl: process.env.SUPABASE_JWKS_URL || '',
-  },
+
 };
